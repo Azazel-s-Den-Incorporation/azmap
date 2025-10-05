@@ -105,19 +105,20 @@ function showElementLockTip(event) {
   }
 }
 
-const onMouseMove = debounce(handleMouseMove, 100);
+const onMouseMove = debounce(handleMouseMove, 2500);
 function handleMouseMove() {
   const point = d3.mouse(this);
   const i = findCell(point[0], point[1]); // pack cell id
-  if (i === undefined)tooltip.style.opacity = "0";
+  if (i === undefined)tooltip.style.display = "none";
 
   showNotes(d3.event);
   const gridCell = findGridCell(point[0], point[1], grid);
-  if (tooltip.dataset.main) {showMainTip();} 
+  if (tooltip.dataset.main) {showMainTip();}
+  else if (cellInfo?.offsetParent) {updateCellInfo(point, i, gridCell);}
   else {showMapTooltip(point, d3.event, i, gridCell);}
-  if (cellInfo?.offsetParent) updateCellInfo(point, i, gridCell);
+  ;
 
-  showMapTooltip(point, e, i, g);
+  highlightCell(i);
 }
 
 // while (loadedComplete === true) {
@@ -132,15 +133,7 @@ function handleMouseMove() {
 //   }
 // }
 
-
-
 // Highlight cell on hover
-while (loadedComplete === true) {
-  const point = d3.mouse(this);
-  const i = findCell(point[0], point[1]); // pack cell id
-  highlightCell(i); 
-};
-  
 function highlightCell(i) {
   if (i === undefined) return;
   const point1 = customization === 1 ? getGridPolygon(i)[0] : getPackPolygon(i)[0];
@@ -182,9 +175,6 @@ function showNotes(e) {
 }
 
 // show viewbox tooltip if main tooltip is blank
-  viewbox.on("touchmove mousemove", );
-while ( loadedComplete == true) {
-}
 function showMapTooltip(point, e, i, g, time = 8000) {
   tip(""); // clear tip
   const path = e.composedPath ? e.composedPath() : getComposedPath(e.target); // apply polyfill

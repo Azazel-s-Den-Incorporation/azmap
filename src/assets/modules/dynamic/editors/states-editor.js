@@ -21,7 +21,7 @@ export function open() {
 
 function insertEditorHtml() {
   const editorHtml = /* html */ `<div id="statesEditor" class="dialog stable">
-    <div id="statesHeader" class="header" style="grid-template-columns: 1em 11em 8em 7em 7em 6em 6em 8em 6em 6em 3em 7em 6em">
+    <div id="statesHeader" class="header" style="grid-template-columns: 2dvb 1dvb 8dvb 7dvb 7dvb 6dvb 6dvb 8dvb 6dvb 6dvb 3dvb 7dvb 6dvb">
       <div data-tip="Click to sort by state name" class="sortable alphabetically" data-sortby="name"></div>
       <div data-tip="Click to sort by state name" class="sortable alphabetically" data-sortby="name">State&nbsp;</div>
       <div data-tip="Click to sort by state form name" class="sortable alphabetically" data-sortby="form">Form&nbsp;</div>
@@ -196,8 +196,8 @@ function statesEditorAddLines() {
         data-type=""
         data-expansionism=""
       >
-        <svg width="1em" height="1em" class="placeholder"></svg>
-        <svg width="1em" height="1em" class="placeholder"></svg>
+        <span width="2dvb" height="1dvb" class="placeholder"></span>
+        <span width="1dvb" height="1dvb" class="placeholder"></span>
         <input data-tip="Neutral lands name. Click to change" class="stateName name pointer italic" value="${
           s.name
         }" readonly />
@@ -209,11 +209,11 @@ function statesEditorAddLines() {
         <span data-tip="Click to overview neutral burgs" class="icon-dot-circled pointer hide" style="padding-right: 1px"></span>
         <div data-tip="Burgs count" class="stateBurgs hide">${s.burgs}</div>
         <span data-tip="Neutral lands area" style="padding-right: 4px" class="icon-map-o hide"></span>
-        <div data-tip="Neutral lands area" class="stateArea hide" style="width: 6em">${si(area)} ${unit}</div>
+        <div data-tip="Neutral lands area" class="stateArea hide" style="width: 6dvb">${si(area)} ${unit}</div>
         <span data-tip="${populationTip}" class="icon-male hide"></span>
         <div data-tip="${populationTip}" class="statePopulation pointer hide" style="width: 5em">${si(population)}</div>
-        <div data-tip="${wealth}" class="stateWealth pointer hide" style="width: 6em">${cv(wealth)}</div>
-        <div data-tip="${wages}" class="stateWages pointer hide" style="width: 3em">${cv(wages)}</div>
+        <div data-tip="${wealth}" class="stateWealth pointer hide" style="width: 6dvb">${cv(wealth)}</div>
+        <div data-tip="${wages}" class="stateWages pointer hide" style="width: 3dvb">${cv(wages)}</div>
         <select class="cultureType ${hidden} placeholder show hide">${getTypeOptions(0)}</select>
         <span class="icon-resize-full ${hidden} placeholder show hide"></span>
         <input class="statePower ${hidden} placeholder show hide" type="number" value="0" />
@@ -242,7 +242,7 @@ function statesEditorAddLines() {
       data-type=${s.type}
       data-expansionism=${s.expansionism}
     >
-      <span data-tip="State ID" width="1em" height="1em"  class="stateID">${s.i}</span>
+      <span data-tip="State ID" width="2dvb" height="1dvb"  class="stateID">${s.i}</span>
       <fill-box fill="${s.color}"></fill-box>
       <input data-tip="State name. Click to change" class="stateName name pointer" value="${s.name}" readonly />
       <svg data-tip="Click to show and edit state emblem" class="coaIcon pointer" viewBox="0 0 200 200"><use href="#stateCOA${
@@ -259,11 +259,11 @@ function statesEditorAddLines() {
       <span data-tip="Click to overview state burgs" style="padding-right: 1px" class="icon-dot-circled pointer hide"></span>
       <div data-tip="Burgs count" class="stateBurgs hide">${s.burgs}</div>
       <span data-tip="State area" style="padding-right: 4px" class="icon-map-o hide"></span>
-      <div data-tip="State area" class="stateArea hide" style="width: 6em">${si(area)} ${unit}</div>
+      <div data-tip="State area" class="stateArea hide" style="width: 6dvb">${si(area)} ${unit}</div>
       <span data-tip="${populationTip}" class="icon-male hide"></span>
       <div data-tip="${populationTip}" class="statePopulation pointer hide" style="width: 5em">${si(population)}</div>
-      <div data-tip="${wealth}" class="stateWealth pointer hide" style="width: 6em">${cv(wealth)}</div>
-      <div data-tip="${wages}" class="stateWages pointer hide" style="width: 3em">${cv(wages)}</div>
+      <div data-tip="${wealth}" class="stateWealth pointer hide" style="width: 6dvb">${cv(wealth)}</div>
+      <div data-tip="${wages}" class="stateWages pointer hide" style="width: 3dvb">${cv(wages)}</div>
       <select data-tip="State type. Defines growth model. Click to change" class="cultureType ${hidden} show hide">${getTypeOptions(
       s.type
     )}</select>
@@ -500,8 +500,8 @@ function changePopulation(stateId) {
   alertMessage.innerHTML = /* html */ `<div height="fit-content">
     <i>Change population of all cells assigned to the state</i>
     <div style="margin: 0.5em 0">
-      Rural: <input type="number" min="0" step="1" id="ruralPop" value=${rural} style="width:6em" />
-      Urban: <input type="number" min="0" step="1" id="urbanPop" value=${urban} style="width:6em" />
+      Rural: <input type="number" min="0" step="1" id="ruralPop" value=${rural} style="width:6dvb" />
+      Urban: <input type="number" min="0" step="1" id="urbanPop" value=${urban} style="width:6dvb" />
     </div>
     <div>Total population: ${format(total)} ⇒ <span id="totalPop">${format(total)}</span>(<span id="totalPopPerc">100</span>%)</div>
   </div>`;
@@ -584,7 +584,7 @@ function changeWealth(stateId) {
   alertMessage.innerHTML = /* html */ `<div height="fit-content">
     <div style="margin: 0.5em 0">
       Wage Rate:<br>
-      ${format(wages)}Ð ⇒ <input type="number" min="0" step="1" id="wagesRate" value=${wages} style="width:6em" />Ð
+      ${format(wages)}Ð ⇒ <input type="number" min="0" step="1" id="wagesRate" value=${wages} style="width:6dvb" />Ð
     </div> 
       
     <div>Urban:<br>${format(urbanWealth)}Ð ⇒ <span id="urbanWealthoutput">${format(urbanWealth)}</span>Ð</div>
@@ -666,7 +666,7 @@ function changeWealth(stateId) {
 //   alertMessage.innerHTML = /* html */ `<div>
 //     <i>Change wage rate of all cells assigned to the state</i>
 //     <div style="margin: 0.5em 0">
-//       Wage Rate: <input type="number" min="0" step="1" id="wageinput" value=${wages} style="width:6em" />
+//       Wage Rate: <input type="number" min="0" step="1" id="wageinput" value=${wages} style="width:6dvb" />
 //     </div>
 //     <div>Wage Rate: ${format(wages)} ⇒ <span id="wageRate">${format(wages)}</span></div>
 //   </div>`;

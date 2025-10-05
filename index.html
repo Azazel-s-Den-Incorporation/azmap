@@ -55,16 +55,16 @@
     <div style="display: flex; flex-flow: column; height: 100%; width: 100%;">
       <div id="dashbar-top">
         <div id="nationbar">
-          <div id="selected-nation" onclick="openOPS()"></div>
+          <div id="selected-nation" onclick="openOPS()" data-tip="Click to see your State stats."></div>
           <form id="nation-stats">
-            <div id="stat-col"><span id="stat-title">POPULATION</span><span id="population"></span></div>
-            <div id="stat-col"><span id="stat-title">POPULARITY</span><span id="popularity"></span></div>
-            <div id="stat-col"><span id="stat-title">ECONOMY</span><span id="economy"></span></div>
-            <div id="stat-col"><span id="stat-title">PIETY</span><span id="piety"></span></div>
-            <div id="stat-col"><span id="stat-title">ARMY</span><span id="army"></span></div>
-            <div id="stat-col"><span id="stat-title">NAVY</span><span id="navy"></span></div>
-            <div id="stat-col"><span id="stat-title">AIRFORCE</span><span id="airforce"></span></div>
-            <div id="stat-col"><span id="stat-title">SATELITES</span><span id="satelites"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="Population">POPULATION</span><span id="population"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="Popularity">POPULARITY</span><span id="popularity"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="Economy">ECONOMY</span><span id="economy"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="Culture & Religion">PIETY</span><span id="piety"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="">ARMY</span><span id="army"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="">NAVY</span><span id="navy"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="">AIRFORCE</span><span id="airforce"></span></div>
+            <div id="stat-col"><span id="stat-title" data-tip="">SATELITES</span><span id="satelites"></span></div>
           </form>
         </div>
 
@@ -92,6 +92,30 @@
           <button id="playpause">⏯</button>
         </div>
       </div>
+    
+      <div
+        id="tooltip"
+        style="
+        opacity: 0;
+        position: absolute !important;
+        z-index: 1000000 !important;
+        display: flex !important;
+        text-align: center !important;
+        width: fit-content !important;
+        height: fit-content !important;
+        max-width: 13% !important;
+        max-height: 20% !important;
+        padding: 5px !important;
+        cursor: default !important;
+        border: thick groove #ccab1e !important;
+        text-shadow: 1px 1px 2px #1d0e0f !important;
+        color: #ffffff !important;
+        font-size: 1.5dvb !important;
+        font-weight: bold !important;
+        white-space: pre-line !important;
+        background: linear-gradient(0.1turn, #1e1e1e, #c71d1d, #1e1e1e) !important;"
+        data-main="Сlick the arrow button for options. Zoom in to see the map in details"
+      ></div>
 
       <div id="map-box">
         <svg
@@ -4630,12 +4654,6 @@
       <input type="file" accept=".json" id="styleToLoad" />
       <input type="file" accept=".csv" id="culturesCSVToLoad" />
     </div>
-    
-    <div
-      id="tooltip"
-      style="opacity: 0"
-      data-main="Сlick the arrow button for options. Zoom in to see the map in details"
-    ></div>
     
 
     <div id="menu-screen" style="display: none;">

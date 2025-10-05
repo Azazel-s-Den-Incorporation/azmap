@@ -850,7 +850,6 @@ t,
 #biomes,
 #prodvbncesBody,
 #terrs,
-#tooltip,
 #temperature,
 #texture,
 #landmass,
@@ -884,7 +883,7 @@ t,
 }
 
 #statesBody,
-#prodvbncesBody,
+#provincesBody,
 #relig,
 #biomes,
 #cults {
@@ -893,7 +892,7 @@ t,
 }
 
 #statesBody,
-#prodvbncesBody,
+#provincesBody,
 #relig,
 #cults {
   mask: url(#land);
@@ -1021,10 +1020,41 @@ text.drag {
   text-shadow: 0 0 1px red;
 }
 
-#dialogs >div {
+#dialogs {
+  display: flex;
+  flex-flow: column nowrap;
   background-color: #c6c2c2;
-  font-size: 1.5dvb;
-  height: 80%;
+  font-size: 1.6dvb;
+}
+
+#dialogs .header,
+#dialogs .footer{
+  display: flex;
+  flex-flow: row nowrap;
+  height: auto;
+  justify-content: space-between;
+}
+
+#dialogs .footer div {
+  width: fit-content;
+}
+
+#dialogs .table {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 30dvb !important;
+  border: 1px solid #1e1e1e;
+  padding: 2px;
+  overflow-y: scroll;
+  width: inherit;
+}
+
+#dialogs .table div {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  height: 2dvb;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .draggable {
@@ -1047,7 +1077,8 @@ button.ui-button:disabled:hover {
 }
 
 .ui-dialog {
-  height: 80%;
+  max-height: 80%;
+  max-width: 60%;
   -webkit-user-select: none;
   user-select: none;
   align-self: center;
@@ -1469,23 +1500,22 @@ fieldset {
   user-select: text;
 }
 
-#tooltip {
-  display: flex;
-  position: absolute;
-  z-index: 1000;
-  text-align: center;
-  width: fit-content;
-  height: fit-content;
-  max-width: 13%;
-  padding: 5px;
-  cursor: default;
-  border: thick groove #ccab1e;
-  text-shadow: 1px 1px 2px #1d0e0f;
-  color: #ffffff;
-  font-size: 1dvb;
-  font-weight: bold;
-  white-space: pre-line;
-  background: linear-gradient(0.1turn, #1e1e1e, #c71d1d, #1e1e1e);
+div #tooltip {
+  display: flex !important;
+  text-align: center !important;
+  width: fit-content !important;
+  height: fit-content !important;
+  max-width: 13% !important;
+  max-height: 20% !important;
+  padding: 5px !important;
+  cursor: default !important;
+  border: thick groove #ccab1e !important;
+  text-shadow: 1px 1px 2px #1d0e0f !important;
+  color: #ffffff !important;
+  font-size: 1dvb !important;
+  font-weight: bold !important;
+  white-space: pre-line !important;
+  background: linear-gradient(0.1turn, #1e1e1e, #c71d1d, #1e1e1e) !important;
 }
 
 #optionsContent table {

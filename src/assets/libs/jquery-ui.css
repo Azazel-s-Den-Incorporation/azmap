@@ -256,7 +256,7 @@ button.ui-button::-moz-focus-inner {
   padding: 0.4dvb  1dvb ;
 }
 .ui-controlgroup .ui-controlgroup-label span {
-  font-size: 80%;
+  font-size: 90%;
 }
 .ui-controlgroup-horizontal .ui-controlgroup-label + .ui-controlgroup-item {
   border-left: none;
@@ -304,21 +304,20 @@ button.ui-button::-moz-focus-inner {
 .ui-checkboxradio-disabled {
   pointer-events: none;
 }
+
 .ui-dialog .ui-dialog-titlebar {
   display: flex;
   padding: 0.3dvb  0.8dvb ;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.2dvb ;
+  font-size: 1.5dvb ;
   min-width: 150px;
   top: 0;
-  position: relative;
-  z-index: +1;
 }
 .ui-dialog .ui-dialog-title {
   white-space: nowrap;
   width: 100%;
-  height: 4dvb;
+  height: 1.5dvb;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -353,14 +352,6 @@ button.ui-button::-moz-focus-inner {
   color: #5d4651;
 }
 
-.ui-dialog .ui-dialog-content {
-  position: relative;
-  border: 0;
-  padding: 0.5dvb  1dvb ;
-  background: none;
-  overflow-y: scroll;
-  overflow-x: auto;
-}
 .ui-dialog .ui-dialog-buttonpane {
   text-align: left;
   border-width: 1px 0 0 0;
@@ -429,7 +420,7 @@ button.ui-button::-moz-focus-inner {
 .ui-widget textarea,
 .ui-widget button {
   font-family: monospace;
-  font-size: 1dvb ;
+  font-size: 1.5dvb ;
 }
 .ui-widget button[class^="icon-"] {
   padding: 1px 6px;
@@ -437,7 +428,6 @@ button.ui-button::-moz-focus-inner {
 .ui-widget.ui-widget-content {
   border: 1px solid #5e4fa2;
   color: #333333;
-  overflow-y: scroll;
 }
 .ui-widget-content {
   border: 1px solid #dddddd;
